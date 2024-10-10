@@ -90,33 +90,101 @@ table {
 
 /* Heading Styles */
 header{
+	display: grid;
+	grid-template-columns: .3fr 1fr;
 	background: linear-gradient(to bottom, var(--teal) 0%, var(--white) 100%);
+	padding-bottom: 5rem;
 }
 
-/* header div{
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-} */
+header a img{
+	max-width: fit-content;
+}
+
+header p{
+	grid-row: 3 / 4;
+	grid-column: 1 / -1;
+	font-size: large;
+}
+
 
 body{
 	line-height: 1.5;
+	width: 100%;
+	margin: 0 auto;
+	display: block;
 }
 
-/* Text Styles */
+#menuToggle label{
+	color: var(--black);
+	background-color: var(--yellow);
+	text-align: center;
+	padding: 1rem;
+}
+
+#menuToggle input {
+	display: block;
+	width: 100px;
+	height: 40px;
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	padding: 0;
+	cursor: pointer;  
+	opacity: 0; /* hide this */
+	 /* and place it over the hamburger */  
+	-webkit-touch-callout: none;
+  }
+
+#menu li{
+	visibility: hidden;
+	width: 0px;
+	height: 0px;
+}
+
+#menu a{
+	display: block;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: black;
+	text-align: center;
+	background-color: var(--teal);
+	border-bottom: solid var(--black);
+	padding: 1rem;
+	font-weight: bold;
+}
+
+#menuToggle input:checked + label {
+	color: var(--white);
+	background-color: var(--black);
+	padding: .5rem;
+}
+
+
+#menuToggle input:checked ~ #menu li {
+	visibility: visible;
+	width: auto;
+	height: auto;
+}
+
+
 h1, h2, h3{
     font-family: Molle, system-ui;
 } 
 
 h1{
-	font-size: 4em;
+	margin-left: 1rem;
+	font-size: 5em;
+	grid-column: 1 / -1;
+	grid-row: 2 / 3;
 }
 
 h2{
-    font-size: 3em;
+	margin-left: 2rem;
+    font-size: 4em;
 }
 
 h3{
-	font-size: 2em;
+	font-size: 3em;
 }
 
 h4{
@@ -125,65 +193,84 @@ h4{
 	text-transform: uppercase;
 }
 
-
-
-h1, h2, p{
-	padding-left: 2.5rem;
+header p{
+	font-size: 1.5rem;
+	margin-left: 2rem;
 }
 
-h4, p, q, small, nav, button, form, ::placeholder, option{
+
+h4, p, q, small, nav, button, form, ::placeholder, option, #mySubmit, footer{
 	font-family: Montserrat, system-ui;
 }
 
 #intro img{
-	width: 100%;;
+	width: 100%;
+	margin-top: .5rem;
+}
+
+#intro p{
+	font-size: 1.2rem;
+	margin-left: 2rem;
 }
 
 #plan{
+	margin-top: 1.5rem;
 	background: var(--yellow);
+	padding: 2rem;
 }
 
 
 #plan section{
 	background: var(--teal);
-	border: 4px solid var(--white);
+	border: 3px solid var(--white);
 	text-align: center;
 	border-radius: 5px;
-	padding-top: 40px;
-	padding-bottom: 40px;
-	margin: 1rem;
+	padding: 2rem 2rem; 
+	margin: .5rem;
 }
 
-#plan section h4{
-	padding-bottom: 20px;
+#plan section h4{	
+	padding-bottom: 1.25rem;
 }
 
+#testimonials{
+	margin: 2rem;
 
-
+}
 #testimonials div{
 	text-align: center;
-	/* display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center; */
 }
+
+#testimonials section p{
+	font-size: 1.5rem;
+}
+
+q::before{
+	content: '"';
+}
+
+q::after{
+	content: '"';
+}
+
+#testimonials section q{
+	font-size: 1.2rem;
+	font-style: italic;
+}
+
 
 #about{
 	background: var(--blue);
-	/* display: flex;
-	justify-content: flex-start;
-	flex: 50%; */
-	/* display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 0.5rem; */
+	padding: 3rem;
 }
 
 #about div{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	gap: 1rem;
-}
+	text-align: center;
+	justify-content: center;
 
+}
 
 #about h4{
 	text-transform: uppercase;
@@ -191,20 +278,19 @@ h4, p, q, small, nav, button, form, ::placeholder, option{
 
 #about p{
 	font-size: 1.5rem;
-}
-
-#about section{
 	text-align: center;
-	/* display: flex;
-	flex-direction: column;
-	align-items: center; */
 }
 
 
+#contact{
+	margin: 2rem;
+}
 
-/* Form Styles */
-
-
+h3 span{
+	font-size: 1.5rem;
+	font-family: Montserrat, system-ui;
+	font-style: italic;
+}
 label, legend{
 	display: block;
 	font-size: large;
@@ -212,19 +298,47 @@ label, legend{
 	font-weight: bold;
 }
 
-
 ::placeholder{
 	color: var(--black);
-	font-size: 1rem;
+	font-size: 1.2rem;
 }
-
 
 
 input{
 	border: solid var(--purple);
 	width: 90%;
-	padding: 1rem;
+	padding: 1.5rem;
+	margin-bottom: 1rem;;
 }
+
+input[type="radio"] {
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: var(--purple);
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+
+input[type="radio"]::before {
+	content: "";
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+	transform: scale(0);
+	transition: 120ms transform ease-in-out;
+	box-shadow: inset 2em 2em var(--purple);
+  }
+  
+input[type="radio"]:checked::before {
+	transform: scale(1);
+  }
+
 
 .radio-label{
 	font-weight: normal;
@@ -236,9 +350,259 @@ input{
 }
 
 fieldset{
+	margin-bottom: 1rem;
 }
 
-/* Small Screen Styles */
-@media screen and (min-width: 320px){
+select{
+	appearance: none;
+	background-color: transparent;
+	border: none;
+	padding: 1rem;
+	margin: 0;
+	width: 90%;
+	font-family: inherit;
+	font-size: inherit;
+	cursor: inherit;
+	line-height: inherit;
+	outline: none;
+}
+
+.custom-select {
+	width: 90%;
+	margin-bottom: 1rem;
+	border: solid var(--purple);
+	padding: 0.25em 0.5em;
+	font-size: 1.25rem;
+	cursor: pointer;
+	line-height: 1.1;
+	background-color: #fff;
+	display: grid;
+	grid-template-areas: "select";
+	align-items: center;
+}
+
+select, .custom-select:after {
+  grid-area: select;
+}
+
+.custom-select::after {
+	content: "";
+	width: 0.8em;
+	height: 0.5em;
+	background-color: var(--purple);
+	clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+	justify-self: end;
+}
+
+
+#mySubmit{
+	background: var(--purple);
+	color: var(--white);
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	font-weight: bold;
+	width: 95%;
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+	margin-bottom: 1rem;
+}
+
+
+  footer{
+	background: var(--light-gray);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1rem;
+	justify-content: space-evenly;
+  }
+
+  footer p{
+	margin-bottom: 1rem;
+  }
+  footer p, footer a{
+	text-decoration: none;
+	color: var(--black);
+  }
+
+
+ /* Medium Screen Styles */
+@media screen and (min-width: 600px){
+
+
+
+	h1{
+		font-size: 4rem;
+		grid-column: 2 /3;
+		grid-row: 1 /2;
+		margin-left: 0;
+	}
+
+	header p{
+		grid-column: 2 / 3;
+		grid-row: 2 /3;
+		margin-left: 0;
+	}
+
+	#intro, #plan, #testimonials, #about, #contact {
+		padding: 2rem 5rem 2rem 5rem;
+		margin-top: 0;
+	}
+
+	h2, #intro p{
+		margin-left: 0;
+	}
+
+	#toggle, #menuToggle label{
+		visibility: hidden;
+		width: 0px;
+		height: 0px;
+	}
+
+	#menu li{
+		visibility: visible;
+		width: auto;
+		height: auto;
+	}
+
+	nav{
+		grid-column: 1 / -1;
+	}
+
+	#menu{
+		display: flex;
+		justify-content: center;
+		column-gap: 1rem;
+	}
+
+	#menu a{
+		background: var(--white);
+		color: var(--black);
+		border-bottom: none;
+		padding: 1rem 1rem;
+	}
+
+	#menu .active a{
+		background: var(--yellow);
+	}
+
+	#img-grid{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-column-gap: 1rem;
+		grid-row-gap: .5rem;
+	}
+
+	picture{
+		grid-column: 1 / -1;
+	}
+
+	#plan div{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	#testimonials div{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	#about div{
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		gap: 1rem;
+	}
+
+
+	fieldset{
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+	#mySubmit{
+		width: 30%;
+		display: block;
+		margin-left: auto;
+		margin-top: 3rem;
+	}
+
+	footer{
+		flex-direction: row;
+	}
+
+	footer p{
+		margin-top: 1rem;
+	}
+
+
+}
+
+/* Large Screen Styles */
+@media screen and (min-width: 1200px){
+
+	header{
+		grid-template-columns: .3fr 1fr 1fr;
+	}
+
+	nav{
+		grid-column: 3 / 4;
+		margin-left: auto;
+	}
+
+	h1{
+		grid-column: 2 / 3;
+	}
+
+	#intro, #plan, #testimonials, #about, #contact{
+		padding-top: 6rem;
+		padding-bottom: 6rem;
+	}
+
+	#menu a{
+		padding: .5rem;
+		font-size: 1.5rem;
+	}
+
+
+	#intro{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+	}
+
+	#intro p{
+		grid-column: 1 / 2;
+	}
+
+	#plan div{
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+
+	#testimonials div{
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+
+	#about div{
+		max-width:fit-content;
+		margin: auto;
+	}
+	
+	form{
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 1rem;
+	}
+
+	footer{
+		display: grid;
+		grid-template-columns: 3fr 1fr 1fr;
+	}
+	footer p{
+		margin-left: 1rem;
+	}
+
+	footer a{
+		margin-left: 10rem;
+	}
+
 
 }
