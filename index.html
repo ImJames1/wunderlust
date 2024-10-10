@@ -1,284 +1,615 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="Geno Souder">
-  <title>Wunderlust Travel</title>
-</head>
-<body>
-  <a href="#main-content" id="skip-link">Skip to Main Content</a>
-  <header>
-    <h1>Wunderlust Travel</h1>
-    <!-- (logo.png) -->
-    <picture>
-      <source media="(min-width: 1024px)" srcset="images/logo-L.png"> 
-      <source media="(max-width: 780px)" srcset="images/logo-M.png"> 
-      <source media="(max-width: 320px)" srcset="images/logo-S.png">
-      <img src="images/logo-S.png" alt="logo">
-    </picture>
-      
-    <p>Let Wunderlust Travel help you plan the trip of your dreams!</p>
+/* Geno Souder */
 
-    <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
-    <nav>
-      <ul>
-        <li><a href="#">Destinations</a></li>
-        <li><a href="#">Inspirations</a></li>
-        <li><a href="#">Special</a></li>
-        <li><a href="#Contact_Us">Contact Us</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main id="main-content">
+@import url('https://fonts.googleapis.com/css2?family=Molle&family=Montserrat&display=swap');
 
-    <section id="Majorca">
-      <h2>Majorca</h2>
-      <p>Imagine an island with turquoise blue waters, secret coves, soft golden sands, lush green foliage, rugged mountains, picturesque villages and a vibrant capital city. The island and its capital, Palma, are overflowing with character, while its beaches are famous all around the world, making it one of the most sought-after summer destinations.</p>
-      <!-- majorca-waves.png
-      majorca-beach.png
-      majorca-cove.png -->
-      <picture>
-        <source media="(min-width: 1024px)" srcset="images/majorca-waves-L.png">
-        <source media="(max-width: 780px)" srcset="images/majorca-waves-M.png">
-        <source media="(max-width: 320px)" srcset="images/majorca-waves-S.png">
-        <img src="images/majorca-waves-S.png" alt="majorca waves">
-      </picture>
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
-      <picture>
-        <source media="(min-width: 1024px)" srcset="images/majorca-beach-L.png">
-        <source media="(max-width: 780px)" srcset="images/majorca-beach-M.png">
-        <source media="(max-width: 320px)" srcset="images/majorca-beach-S.png">
-        <img src="images/majorca-beach-S.png" alt="majorca beach">
-      </picture>
+:root{
+    --yellow: #F6D64A;
+	--teal: #55BCD5;
+	--purple: #9B26B0;
+	--blue: #499BD2;
+	--dark-gray: #222222;
+	--light-gray: #EAEAEA;
+	--white: #FFFFFF;
+	--black: #000000;
+}
 
-      <picture>
-        <source media="(min-width: 1024px)" srcset="images/majorca-cove-L.png">
-        <source media="(max-width: 780px)" srcset="images/majorca-cove-M.png">
-        <source media="(max-width: 320px)" srcset="images/majorca-cove-S.png">
-        <img src="images/majorca-cove-S.png" alt="majorca cove">
-      </picture>
-    </section>
+/* Global Styles */
 
-    <section id="Plan-Your-Trip">
-      <h3>Plan Your Trip</h3>
-      <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
-      <h4>How to Get there</h4>
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plane" width="150" height="150" viewBox="0 0 24 24" stroke-width="1" stroke="#00bfd8" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-        <path d="M16 10h4a2 2 0 0 1 0 4h-4l-4 7h-3l2 -7h-4l-2 2h-3l2 -4l-2 -4h3l2 2h4l-2 -7h3z" />
-      </svg>
+#skip{
+	position:absolute;
+	left:-10000px;
+	top:auto;
+	width:1px;
+	height:1px;
+	overflow:hidden;
+}
 
-      <!-- (href=”#”) (title=”Search for flights”) -->
-      <a href="#" title="Search for flights">Search for Flights</a>
+#skip:focus{
+	position:static;
+	width:auto;
+	height:auto;
+}
 
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="40" height="40" viewBox="0 0 24 24" stroke-width="3" stroke="#00bfd8" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-        <polyline points="9 6 15 12 9 18" />
-      </svg>
-      <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
-      <h4>Places to Stay</h4>
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bed" width="150" height="150" viewBox="0 0 24 24" stroke-width="1" stroke="#00bfd8" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-        <path d="M3 7v11m0 -4h18m0 4v-8a2 2 0 0 0 -2 -2h-8v6" />
-        <circle cx="7" cy="10" r="1" />
-      </svg>
+.sr-only{
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
 
-      <!-- (href=”#”) (title=”Search for Hotels”) -->
-      <a href="#" title="Search for Hotels">Search for Hotels</a>
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="40" height="40" viewBox="0 0 24 24" stroke-width="3" stroke="#00bfd8" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-        <polyline points="9 6 15 12 9 18" />
-      </svg>
-      <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
-      <h4>Things to do</h4>
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sailboat" width="150" height="150" viewBox="0 0 24 24" stroke-width="1" stroke="#00bfd8" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-        <path d="M2 20a2.4 2.4 0 0 0 2 1a2.4 2.4 0 0 0 2 -1a2.4 2.4 0 0 1 2 -1a2.4 2.4 0 0 1 2 1a2.4 2.4 0 0 0 2 1a2.4 2.4 0 0 0 2 -1a2.4 2.4 0 0 1 2 -1a2.4 2.4 0 0 1 2 1a2.4 2.4 0 0 0 2 1a2.4 2.4 0 0 0 2 -1" />
-        <path d="M4 18l-1 -3h18l-1 3" />
-        <path d="M11 12h7l-7 -9v9" />
-        <line x1="8" y1="7" x2="6" y2="12" />
-      </svg>
+header{
+	display: grid;
+	grid-template-columns: .3fr 1fr;
+	background: linear-gradient(to bottom, var(--teal) 0%, var(--white) 100%);
+	padding-bottom: 2rem;
+}
 
-      <!-- (href=”#”) (title=”Search for Activities”) -->
-      <a href="#" title="Search for Activities">Search for Activities</a>
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="40" height="40" viewBox="0 0 24 24" stroke-width="3" stroke="#00bfd8" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-        <polyline points="9 6 15 12 9 18" />
-      </svg>
-      <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
-      <h4>Where to Eat</h4>
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tools-kitchen-2" width="150" height="150" viewBox="0 0 24 24" stroke-width="1" stroke="#00bfd8" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-        <path d="M19 3v12h-5c-.023 -3.681 .184 -7.406 5 -12zm0 12v6h-1v-3m-10 -14v17m-3 -17v3a3 3 0 1 0 6 0v-3" />
-      </svg>
+header a img{
+	max-width: 100%;
+	height: auto;
+	width: 500px;
 
-      <!-- (href=”#”) (title=”Search for Restaurants”)  -->
-      <a href="#" title="Search for Restaurants">Search for Restaurants</a>
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="40" height="40" viewBox="0 0 24 24" stroke-width="3" stroke="#00bfd8" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-        <polyline points="9 6 15 12 9 18" />
-      </svg>
-      <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    </section>
+}
 
-    <section id="Testimonials">
-      <h3>Testimonials</h3>
-      <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
-      <h4>Miranda Blake</h4>
-      <!-- miranda-blake.png -->
-      <picture>
-        <source media="(min-width: 1024px)" srcset="images/miranda-blake-L.png">
-        <source media="(max-width: 780px)" srcset="images/miranda-blake-M.png">
-        <source media="(max-width: 320px)" srcset="images/miranda-blake-S.png">
-        <img src="images/miranda-blake-S.png" alt="miranda blake profile picture">
-      </picture>
-      <p>Traveling From: London, England</p>
-      <q>I traveled here for business, but my stay was extended. Now it is my home.</q>
-      <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
-      <h4>Max Winter</h4>
-      <!-- max-winter.png -->
-      <picture>
-        <source media="(min-width: 1024px)" srcset="images/max-winter-L.png">
-        <source media="(max-width: 780px)" srcset="images/max-winter-M.png">
-        <source media="(max-width: 320px)" srcset="images/max-winter-S.png">
-        <img src="images/max-winter-S.png" alt="max winter profile picture">
-      </picture>
-      <p>Traveling From: Berlin, Germany</p>
-      <q>Great escape from my reality. Beautiful sunsets, wonderful people, great beer.</q>
-      <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p> 
-      <h4>Inés Villegoes</h4>
-      <!-- ines-villegoes.png -->
-      <picture>
-        <source media="(min-width: 1024px)" srcset="images/ines-villegoes-L.png">
-        <source media="(max-width: 780px)" srcset="images/ines-villegoes-M.png">
-        <source media="(max-width: 320px)" srcset="images/ines-villegoes-S.png">
-        <img src="images/ines-villegoes-S.png" alt="ines villegoes profile picture">
-      </picture>
-      <p>Traveling From: Barcelona, Spain</p>
-      <q>A very safe environment for all travelers.</q>
+header p{
+	grid-row: 3 / 4;
+	grid-column: 1 / -1;
+	font-size: 1.5rem;
+	margin-left: 2rem;
+	margin-top: -1rem;
+}
 
-      <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
-      <h4>Carmen Lorenzo</h4>
-      <!-- carmen-lorenzo.png -->
-      <picture>
-        <source media="(min-width: 1024px)" srcset="images/carmen-lorenzo-L.png">
-        <source media="(max-width: 780px)" srcset="images/carmen-lorenzo-M.png">
-        <source media="(max-width: 320px)" srcset="images/carmen-lorenzo-S.png">
-        <img src="images/carmen-lorenzo-S.png" alt="carmen lorenzo profile picture">
-      </picture>
-      <p>Traveling From: Madrid, Spain</p>
-      <q>Live, laugh, love-- everything you need in Majorca.</q>
-      <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
-    </section>
 
-    <section id="About-Your-Destination">
-      <h3>About Your Destination</h3>
-      <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
-      <h4>Size</h4>
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-ruler-2" width="100" height="100" viewBox="0 0 24 24" stroke-width="1" stroke="#a905b6" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-        <path d="M17 3l4 4l-14 14l-4 -4z" />
-        <path d="M16 7l-1.5 -1.5" />
-        <path d="M13 10l-1.5 -1.5" />
-        <path d="M10 13l-1.5 -1.5" />
-        <path d="M7 16l-1.5 -1.5" />
-      </svg>
+body{
+	line-height: 1.5;
+	width: 100%;
+	margin: 0 auto;
+	display: block;
+}
 
-      <p>Size: 1,405 miles squared</p>
-      <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
-      <h4>Elevation</h4>
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-top-bar" width="100" height="100" viewBox="0 0 24 24" stroke-width="1" stroke="#a905b6" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-        <line x1="12" y1="21" x2="12" y2="3" />
-        <path d="M15 6l-3 -3l-3 3" />
-        <line x1="9" y1="21" x2="15" y2="21" />
-      </svg>
+#menuToggle label{
+	color: var(--black);
+	background-color: var(--yellow);
+	text-align: center;
+	padding: 1rem;
+}
 
-      <p>Elevation: 4,741 feet</p>
-      <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
-      <h4>Location</h4>
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" width="100" height="100" viewBox="0 0 24 24" stroke-width="1" stroke="#a905b6" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-        <circle cx="12" cy="11" r="3" />
-        <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
-      </svg>
+#menuToggle input {
+	display: block;
+	width: 100px;
+	height: 40px;
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	padding: 0;
+	cursor: pointer;  
+	opacity: 0; /* hide this */
+	-webkit-touch-callout: none;
+  }
 
-      <p>Location: Mediterranean</p> 
-      <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
-      <h4>Population</h4>
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-users" width="100" height="100" viewBox="0 0 24 24" stroke-width="1" stroke="#a905b6" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-        <circle cx="9" cy="7" r="4" />
-        <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-        <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" />
-      </svg>
+#menu li{
+	visibility: hidden;
+	width: 0px;
+	height: 0px;
+}
 
-      <p>Population: 923,608</p>
-      <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
-    </section>
+#menu a{
+	display: block;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: black;
+	text-align: center;
+	background-color: var(--teal);
+	border-bottom: solid var(--black);
+	padding: 1rem;
+	font-weight: bold;
+}
+
+#menuToggle input:checked + label {
+	color: var(--white);
+	background-color: var(--black);
+	padding: .5rem;
+}
+
+
+#menuToggle input:checked ~ #menu li {
+	visibility: visible;
+	width: auto;
+	height: auto;
+}
+
+h1, h2, h3{
+    font-family: Molle, system-ui;
+} 
+
+h1{
+	margin-left: 1rem;
+	font-size: 5em;
+	grid-column: 1 / -1;
+	grid-row: 2 / 3;
+}
+
+h2{
+	margin-left: 2rem;
+    font-size: 4em;
+}
+
+h3{
+	font-size: 3em;
+}
+
+h3 span{
+	font-size: 1.5rem;
+	font-family: Montserrat, system-ui;
+	font-style: italic;
+}
+
+h4{
+	font-weight: bold;
+	font-size: 2rem;
+	text-transform: uppercase;
+}
+
+
+h4, p, q, small, nav, button, form, ::placeholder, option, #mySubmit, footer{
+	font-family: Montserrat, system-ui;
+}
+
+#intro img{
+	width: 100%;
+	margin-top: .5rem;
+}
+
+#intro p{
+	font-size: 1.2rem;
+	margin-left: 2rem;
+}
+
+#plan{
+	margin-top: 1.5rem;
+	background: var(--yellow);
+	padding: 2rem;
+}
+
+
+#plan section{
+	background: var(--teal);
+	border: 3px solid var(--white);
+	text-align: center;
+	border-radius: 5px;
+	padding: 2rem 2rem; 
+	margin: .5rem;
+}
+
+#plan section h4{	
+	padding-bottom: 1.25rem;
+}
+
+#testimonials{
+	margin: 2rem;
+
+}
+#testimonials div{
+	text-align: center;
+}
+
+#testimonials section p{
+	font-size: 1.5rem;
+}
+
+q::before{
+	content: '"';
+}
+
+q::after{
+	content: '"';
+}
+
+#testimonials section q{
+	font-size: 1.2rem;
+	font-style: italic;
+}
+
+
+#about{
+	background: var(--blue);
+	padding: 3rem;
+}
+
+#about div{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	text-align: center;
+	justify-content: center;
+
+}
+
+#about h4{
+	text-transform: uppercase;
+}
+
+#about p{
+	font-size: 1.5rem;
+	text-align: center;
+}
+
+
+#contact{
+	margin: 2rem;
+}
+
+
+label, legend{
+	display: block;
+	font-size: large;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+::placeholder{
+	color: var(--black);
+	font-size: 1.2rem;
+}
+
+
+input{
+	border: solid var(--purple);
+	width: 90%;
+	padding: 1.5rem;
+	margin-bottom: 1rem;;
+}
+
+input[type="radio"] {
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: var(--purple);
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+
+input[type="radio"]::before {
+	content: "";
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+	transform: scale(0);
+	transition: 120ms transform ease-in-out;
+	box-shadow: inset 2em 2em var(--purple);
+  }
   
-    <section id="Contact_Us">
-      <h3>Contact Us</h3>
-      <form>
-        <label for="first_name">First Name<span class="required">*</span></label>
-        <input id="first_name" type="text" placeholder="Enter first name" autocomplete="on" required>
+input[type="radio"]:checked::before {
+	transform: scale(1);
+  }
 
-        <label for="last_name">Last Name<span class="required">*</span></label>
-        <input id="last_name" type="text" placeholder="Enter last name" autocomplete="on" required>
 
-        <fieldset>
-          <legend>Contact Method</legend>
+.radio-label{
+	font-weight: normal;
+	font-size: 1rem;
+}
 
-          <input id="pref_email" type="radio" name="pref_contact" checked>
-          <label for="pref_email">Email</label>
+.required{
+	color: var(--purple);
+}
 
-          <input id="pref_text" type="radio" name="pref_contact">
-          <label for="pref_text">Text</label>
+fieldset{
+	margin-bottom: 1rem;
+}
 
-          <input id="pref_phone" type="radio" name="pref_contact">
-          <label for="pref_phone">Phone</label>
-        </fieldset>
+select{
+	appearance: none;
+	background-color: transparent;
+	border: none;
+	padding: 1rem;
+	margin: 0;
+	width: 90%;
+	font-family: inherit;
+	font-size: inherit;
+	cursor: inherit;
+	line-height: inherit;
+	outline: none;
+}
 
-        <label for="email">Email Address<span class="required">*</span> </label>
-        <input id="email" type="email" placeholder="Enter Email" autocomplete="on" required>
+.custom-select {
+	width: 90%;
+	margin-bottom: 1rem;
+	border: solid var(--purple);
+	padding: 0.25em 0.5em;
+	font-size: 1.25rem;
+	cursor: pointer;
+	line-height: 1.1;
+	background-color: #fff;
+	display: grid;
+	grid-template-areas: "select";
+	align-items: center;
+}
 
-        <label for="phone_number">Phone Number<span class="required">*</span></label>
-        <input id="phone_number" type="tel" placeholder="Enter telephone number" autocomplete="on" required>
+select, .custom-select:after {
+  grid-area: select;
+}
 
-        <!-- Destination (Barcelona, Granada, Ibiza, Madrid, Majorca, Seville, Tenerife, Valencia) -->
-        <label for="destination">Destination</label>
-        <select id="destination" name="select">
-          <option value="Barcelona">Barcelona</option>
-          <option value="Granada">Granada</option>
-          <option value="Ibiza">Ibiza</option>
-          <option value="Madrid">Madrid</option>
-          <option value="Majorca">Majorca</option>
-          <option value="Seville">Seville</option>
-          <option value="Tenerife">Tenerife</option>
-          <option value="Valencia">Valencia</option>
-        </select>
-        
-        <!-- Travel Time (Fall, Winter, Spring, Summer, Flexible) -->
-        <label for="travel_time">Travel Time</label>
-        <select id="travel_time" name="select">
-          <option value="Fall">Fall</option>
-          <option value="Winter">Winter</option>
-          <option value="Spring">Spring</option>
-          <option value="Summer">Summer</option>
-          <option value="Flexible">Flexible</option>
-        </select>
-        <input type="submit" name="submit" value="Submit">
-      </form>
-    </section>
+.custom-select::after {
+	content: "";
+	width: 0.8em;
+	height: 0.5em;
+	background-color: var(--purple);
+	clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+	justify-self: end;
+}
 
-  </main>
-  <footer>
-    <p>Copyright 2021 Wunderlust</p>
-    <p>Privacy Statement</p>
-    <p>Terms of Service</p>
-    
-  </footer>
-</body>
-</html>
+
+#mySubmit{
+	background: var(--purple);
+	color: var(--white);
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	font-weight: bold;
+	width: 95%;
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+	margin-bottom: 1rem;
+}
+
+  footer{
+	background: var(--light-gray);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1rem;
+	justify-content: space-evenly;
+  }
+
+  footer p{
+	margin-bottom: 1rem;
+  }
+  footer p, footer a{
+	text-decoration: none;
+	color: var(--black);
+  }
+
+
+ /* Medium Screen Styles */
+@media screen and (min-width: 600px){
+
+	h1{
+		font-size: 4rem;
+		grid-column: 2 /3;
+		grid-row: 1 / 2;
+		margin-left: 0;
+	}
+
+	header p{
+		grid-column: 2 / 3;
+		grid-row: 2 /3;
+		margin-left: 0;
+	}
+
+	#intro, #plan, #testimonials, #about, #contact {
+		padding: 2rem 5rem 2rem 5rem;
+		margin-top: 0;
+	}
+
+	h2, #intro p{
+		margin-left: 0;
+	}
+
+	#toggle, #menuToggle label{
+		visibility: hidden;
+		width: 0px;
+		height: 0px;
+	}
+
+	#menu li{
+		visibility: visible;
+		width: auto;
+		height: auto;
+	}
+
+	nav{
+		grid-column: 1 / -1;
+	}
+
+	#menu{
+		display: flex;
+		justify-content: center;
+		column-gap: 1rem;
+	}
+
+	#menu a{
+		background: var(--white);
+		color: var(--black);
+		border-bottom: none;
+		padding: 1rem 1rem;
+	}
+
+	#menu .active a{
+		background: var(--yellow);
+	}
+
+	#img-grid{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-column-gap: 1rem;
+		grid-row-gap: .5rem;
+	}
+
+	picture{
+		grid-column: 1 / -1;
+	}
+
+	#plan div{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	#testimonials div{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	#about div{
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		gap: 1rem;
+	}
+
+
+	fieldset{
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+	#mySubmit{
+		width: 30%;
+		display: block;
+		margin-left: auto;
+		margin-top: 3rem;
+	}
+
+	footer{
+		flex-direction: row;
+	}
+
+	footer p{
+		margin-top: 1rem;
+	}
+
+}
+
+/* Large Screen Styles */
+@media screen and (min-width: 1200px){
+
+	header{
+		grid-template-columns: .3fr 1fr 1fr;
+	}
+
+	h1{
+		grid-column: 2 / 3;
+	}
+
+	nav{
+		margin-top: -2rem;
+	}
+
+	h2{
+		grid-column: 1 / 2;
+		grid-row: 1 / 2;
+	}
+
+	nav{
+		grid-column: 3 / 4;
+		margin-left: auto;
+	}
+
+	#menu a{
+		padding: .5rem;
+		font-size: 1.5rem;
+	}
+
+	#intro, #plan, #testimonials, #about, #contact{
+		padding-top: 6rem;
+		padding-bottom: 6rem;
+	}
+
+	#intro{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+	}
+
+	#intro p{
+		grid-column: 1 / 2;
+		grid-row: 1 / 2;
+		margin-top: 6rem;
+	}
+
+	#img-grid{
+		grid-row: 1 / 2;
+		grid-column: 2 / 3;
+	}
+
+	#plan div{
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+
+	#testimonials div{
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+
+	#about div{
+		max-width:fit-content;
+		margin: auto;
+	}
+	
+	form{
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 1rem;
+	}
+
+	footer{
+		display: grid;
+		grid-template-columns: 3fr 1fr 1fr;
+	}
+	footer p{
+		margin-left: 1rem;
+	}
+
+	footer a{
+		margin-left: 10rem;
+	}
+}
