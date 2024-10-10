@@ -88,6 +88,7 @@ table {
 	overflow: hidden;
 }
 
+
 /* Heading Styles */
 header{
 	display: grid;
@@ -97,7 +98,10 @@ header{
 }
 
 header a img{
-	max-width: fit-content;
+	max-width: 100%;
+	height: auto;
+	width: 500px;
+
 }
 
 header p{
@@ -196,6 +200,7 @@ h4{
 header p{
 	font-size: 1.5rem;
 	margin-left: 2rem;
+	margin-top: -1rem;
 }
 
 
@@ -429,12 +434,10 @@ select, .custom-select:after {
  /* Medium Screen Styles */
 @media screen and (min-width: 600px){
 
-
-
 	h1{
 		font-size: 4rem;
 		grid-column: 2 /3;
-		grid-row: 1 /2;
+		grid-row: 1 / 2;
 		margin-left: 0;
 	}
 
@@ -533,7 +536,6 @@ select, .custom-select:after {
 		margin-top: 1rem;
 	}
 
-
 }
 
 /* Large Screen Styles */
@@ -603,244 +605,4 @@ select, .custom-select:after {
 	footer a{
 		margin-left: 10rem;
 	}
-}
-
-.custom-select {
-	width: 90%;
-	margin-bottom: 1rem;
-	border: solid var(--purple);
-	padding: 0.25em 0.5em;
-	font-size: 1.25rem;
-	cursor: pointer;
-	line-height: 1.1;
-	background-color: #fff;
-	display: grid;
-	grid-template-areas: "select";
-	align-items: center;
-}
-
-select, .custom-select:after {
-  grid-area: select;
-}
-
-.custom-select::after {
-	content: "";
-	width: 0.8em;
-	height: 0.5em;
-	background-color: var(--purple);
-	clip-path: polygon(100% 0%, 0 0%, 50% 100%);
-	justify-self: end;
-}
-
-
-#mySubmit{
-	background: var(--purple);
-	color: var(--white);
-	font-size: 1.2rem;
-	text-transform: uppercase;
-	font-weight: bold;
-	width: 95%;
-	padding-top: 1.5rem;
-	padding-bottom: 1.5rem;
-	margin-bottom: 1rem;
-}
-
-
-  footer{
-	background: var(--light-gray);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 1rem;
-	justify-content: space-evenly;
-  }
-
-  footer p{
-	margin-bottom: 1rem;
-  }
-  footer p, footer a{
-	text-decoration: none;
-	color: var(--black);
-  }
-
-
- /* Medium Screen Styles */
-@media screen and (min-width: 600px){
-
-
-
-	h1{
-		font-size: 4rem;
-		grid-column: 2 /3;
-		grid-row: 1 /2;
-		margin-left: 0;
-	}
-
-	header p{
-		grid-column: 2 / 3;
-		grid-row: 2 /3;
-		margin-left: 0;
-	}
-
-	#intro, #plan, #testimonials, #about, #contact {
-		padding: 2rem 5rem 2rem 5rem;
-		margin-top: 0;
-	}
-
-	h2, #intro p{
-		margin-left: 0;
-	}
-
-	#toggle, #menuToggle label{
-		visibility: hidden;
-		width: 0px;
-		height: 0px;
-	}
-
-	#menu li{
-		visibility: visible;
-		width: auto;
-		height: auto;
-	}
-
-	nav{
-		grid-column: 1 / -1;
-	}
-
-	#menu{
-		display: flex;
-		justify-content: center;
-		column-gap: 1rem;
-	}
-
-	#menu a{
-		background: var(--white);
-		color: var(--black);
-		border-bottom: none;
-		padding: 1rem 1rem;
-	}
-
-	#menu .active a{
-		background: var(--yellow);
-	}
-
-	#img-grid{
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-column-gap: 1rem;
-		grid-row-gap: .5rem;
-	}
-
-	picture{
-		grid-column: 1 / -1;
-	}
-
-	#plan div{
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-	}
-
-	#testimonials div{
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-	}
-
-	#about div{
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-		gap: 1rem;
-	}
-
-
-	fieldset{
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-	}
-
-	#mySubmit{
-		width: 30%;
-		display: block;
-		margin-left: auto;
-		margin-top: 3rem;
-	}
-
-	footer{
-		flex-direction: row;
-	}
-
-	footer p{
-		margin-top: 1rem;
-	}
-
-
-}
-
-/* Large Screen Styles */
-@media screen and (min-width: 1200px){
-
-	header{
-		grid-template-columns: .3fr 1fr 1fr;
-	}
-
-	nav{
-		grid-column: 3 / 4;
-		margin-left: auto;
-	}
-
-	h1{
-		grid-column: 2 / 3;
-	}
-
-	#intro, #plan, #testimonials, #about, #contact{
-		padding-top: 6rem;
-		padding-bottom: 6rem;
-	}
-
-	#menu a{
-		padding: .5rem;
-		font-size: 1.5rem;
-	}
-
-
-	#intro{
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 1rem;
-	}
-
-	#intro p{
-		grid-column: 1 / 2;
-	}
-
-	#plan div{
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-	}
-
-	#testimonials div{
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-	}
-
-	#about div{
-		max-width:fit-content;
-		margin: auto;
-	}
-	
-	form{
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		gap: 1rem;
-	}
-
-	footer{
-		display: grid;
-		grid-template-columns: 3fr 1fr 1fr;
-	}
-	footer p{
-		margin-left: 1rem;
-	}
-
-	footer a{
-		margin-left: 10rem;
-	}
-
-
 }
